@@ -20,6 +20,10 @@ header{
     border-bottom: 1px solid rgb(46, 46, 46);
     z-index: 1;
 }
+button::selection{
+    background-color: rgb(211, 211, 211);
+    color: black;
+}
 
 nav{
     display: flex;
@@ -97,6 +101,31 @@ li:hover:after {
     font-weight: bold;
 }
 .underline:hover{
+    cursor: pointer;
+}
+.underlineB{
+    position: relative;
+}
+
+.underlineB:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -10px;
+    left: 0;
+    background-color: black;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.underlineB:hover:after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    font-weight: bold;
+}
+.underlineB:hover{
     cursor: pointer;
 }
 
